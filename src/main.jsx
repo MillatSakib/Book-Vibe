@@ -12,6 +12,8 @@ import FullBookData from "./FullBookData.jsx";
 import ListedBooks from "./ListedBooks.jsx";
 import PagesToRead from "./PagesToRead.jsx";
 import NotFoundPage from "./NotFound.jsx";
+import Readbooks from "./Readbooks.jsx";
+import WishlistBooks from "./WishlistBooks.jsx";
 
 const router = createBrowserRouter([
   {
@@ -37,6 +39,16 @@ const router = createBrowserRouter([
       {
         path: "/listedbooks",
         element: <ListedBooks></ListedBooks>,
+        children: [
+          {
+            path: "/listedbooks/readBooks",
+            element: <Readbooks></Readbooks>,
+          },
+          {
+            path: "/listedbooks/wishListBooks",
+            element: <WishlistBooks></WishlistBooks>,
+          },
+        ],
       },
       {
         path: "/pagestoread",

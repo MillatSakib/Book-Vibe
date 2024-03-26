@@ -1,5 +1,7 @@
 import React from "react";
 import DropdownMenu from "./Dropdown";
+import Tabs from "./Tabs";
+import { Outlet } from "react-router";
 
 const ListedBooks = () => {
   return (
@@ -10,7 +12,10 @@ const ListedBooks = () => {
       <div className="text-center">
         <DropdownMenu></DropdownMenu>
       </div>
-      <div className="mt-20">Here the card place</div>
+      <div className="w-[90%] mx-auto">
+        <Tabs></Tabs>
+        <Outlet></Outlet>
+      </div>
     </div>
   );
 };
