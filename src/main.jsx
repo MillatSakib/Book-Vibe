@@ -41,8 +41,14 @@ const router = createBrowserRouter([
         element: <ListedBooks></ListedBooks>,
         children: [
           {
-            path: "/listedbooks/readBooks",
+            path: "/listedbooks/",
             element: <Readbooks></Readbooks>,
+            children: [
+              {
+                path: "/listedbooks/readBooks",
+                element: <div></div>,
+              },
+            ],
           },
           {
             path: "/listedbooks/wishListBooks",
