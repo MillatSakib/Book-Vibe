@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Nav = () => {
+  const [activeBtn, setActiveBtn] = useState(100);
+  const activeButton = "btn btn-outline btn-success mx-2";
+  const inActiveButton = "btn mx-2";
   return (
     <div>
       <div className="navbar bg-base-100">
@@ -41,16 +44,31 @@ const Nav = () => {
             Book Vibe
           </a>
         </div>
-        <div className="navbar-center hidden lg:flex">
+        <div className="navbar-center hidden lg:flex gap-2">
           <ul className="menu menu-horizontal px-1">
             <li>
-              <a>Home</a>
+              <button
+                className={activeBtn === 100 ? activeButton : inActiveButton}
+                onClick={() => setActiveBtn(100)}
+              >
+                Home
+              </button>
             </li>
             <li>
-              <a>Listed Books</a>
+              <button
+                className={activeBtn === 200 ? activeButton : inActiveButton}
+                onClick={() => setActiveBtn(200)}
+              >
+                Listed Books
+              </button>
             </li>
             <li>
-              <a>Pages To Read</a>
+              <button
+                className={activeBtn === 300 ? activeButton : inActiveButton}
+                onClick={() => setActiveBtn(300)}
+              >
+                Pages To Read
+              </button>
             </li>
           </ul>
         </div>
