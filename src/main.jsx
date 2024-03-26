@@ -19,6 +19,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Header></Header>,
+    errorElement: <NotFoundPage></NotFoundPage>,
     children: [
       {
         path: "/",
@@ -53,6 +54,14 @@ const router = createBrowserRouter([
           {
             path: "/listedbooks/wishListBooks",
             element: <WishlistBooks></WishlistBooks>,
+          },
+          {
+            path: "/listedbooks/:bookDetails",
+            loader: ({ params }) =>
+              fetch(
+                `https://millatsakib.github.io/img-src/assignment8/${params.bookDetails}.json`
+              ),
+            element: <FullBookData></FullBookData>,
           },
         ],
       },

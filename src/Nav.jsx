@@ -31,13 +31,34 @@ const Nav = () => {
               className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
             >
               <li>
-                <a>Home</a>
+                <NavLink
+                  to="/"
+                  className={({ isActive }) =>
+                    isActive ? activeButton : inActiveButton
+                  }
+                >
+                  Home
+                </NavLink>
               </li>
               <li>
-                <a>Listed Books</a>
+                <NavLink
+                  to="/listedbooks"
+                  className={({ isActive }) =>
+                    isActive ? activeButton : inActiveButton
+                  }
+                >
+                  Listed Books
+                </NavLink>
               </li>
               <li>
-                <a>Pages To Read</a>
+                <NavLink
+                  to="/pagestoread"
+                  className={({ isActive }) =>
+                    isActive ? activeButton : inActiveButton
+                  }
+                >
+                  Pages To Read
+                </NavLink>
               </li>
             </ul>
           </div>
@@ -79,7 +100,7 @@ const Nav = () => {
             </li>
           </ul>
         </div>
-        <div className="navbar-end gap-2 mr-1 md:mr-6">
+        <div className="navbar-end gap-2 mr-1 md:mr-6 hidden sm:flex">
           <a className="btn text-bold btn-success text-white">Sign In</a>
           <a className="btn text-bold btn-info text-white">Sign Up</a>
         </div>
