@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Nav = () => {
   const [activeBtn, setActiveBtn] = useState(100);
@@ -47,28 +48,31 @@ const Nav = () => {
         <div className="navbar-center hidden lg:flex gap-2">
           <ul className="menu menu-horizontal px-1">
             <li>
-              <button
+              <Link
+                to="/"
                 className={activeBtn === 100 ? activeButton : inActiveButton}
                 onClick={() => setActiveBtn(100)}
               >
                 Home
-              </button>
+              </Link>
             </li>
             <li>
-              <button
+              <Link
+                to="/listedbooks"
                 className={activeBtn === 200 ? activeButton : inActiveButton}
                 onClick={() => setActiveBtn(200)}
               >
                 Listed Books
-              </button>
+              </Link>
             </li>
             <li>
-              <button
+              <Link
+                to="/pagestoread"
                 className={activeBtn === 300 ? activeButton : inActiveButton}
                 onClick={() => setActiveBtn(300)}
               >
                 Pages To Read
-              </button>
+              </Link>
             </li>
           </ul>
         </div>
