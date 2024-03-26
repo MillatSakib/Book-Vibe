@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Nav = () => {
-  const [activeBtn, setActiveBtn] = useState(100);
   const activeButton = "btn btn-outline btn-success mx-2";
   const inActiveButton = "btn mx-2";
   return (
@@ -48,31 +48,34 @@ const Nav = () => {
         <div className="navbar-center hidden lg:flex gap-2">
           <ul className="menu menu-horizontal px-1">
             <li>
-              <Link
+              <NavLink
                 to="/"
-                className={activeBtn === 100 ? activeButton : inActiveButton}
-                onClick={() => setActiveBtn(100)}
+                className={({ isActive }) =>
+                  isActive ? activeButton : inActiveButton
+                }
               >
                 Home
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link
+              <NavLink
                 to="/listedbooks"
-                className={activeBtn === 200 ? activeButton : inActiveButton}
-                onClick={() => setActiveBtn(200)}
+                className={({ isActive }) =>
+                  isActive ? activeButton : inActiveButton
+                }
               >
                 Listed Books
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link
+              <NavLink
                 to="/pagestoread"
-                className={activeBtn === 300 ? activeButton : inActiveButton}
-                onClick={() => setActiveBtn(300)}
+                className={({ isActive }) =>
+                  isActive ? activeButton : inActiveButton
+                }
               >
                 Pages To Read
-              </Link>
+              </NavLink>
             </li>
           </ul>
         </div>

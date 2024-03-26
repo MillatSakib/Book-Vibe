@@ -10,7 +10,8 @@ import Header from "./Header.jsx";
 import Home from "./Home.jsx";
 import FullBookData from "./FullBookData.jsx";
 import ListedBooks from "./ListedBooks.jsx";
-import PagesToRead from "../PagesToRead.jsx";
+import PagesToRead from "./PagesToRead.jsx";
+import NotFoundPage from "./NotFound.jsx";
 
 const router = createBrowserRouter([
   {
