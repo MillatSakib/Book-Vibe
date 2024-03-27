@@ -74,6 +74,10 @@ const router = createBrowserRouter([
       {
         path: "/upcoming",
         element: <Upcoming></Upcoming>,
+        loader: () =>
+          fetch(
+            "https://millatsakib.github.io/img-src/assignment8/upcoming.json"
+          ),
       },
       {
         path: "/feedback",
