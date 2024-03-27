@@ -1,10 +1,17 @@
 import React, { useState } from "react";
 
-function Dropdown() {
+function Dropdown({ setLocalData, localData }) {
   function sort(sorting) {
-    const targetString = JSON.parse(localStorage.getItem("readBook"));
-    targetString.sort((a, b) => a[sorting] - b[sorting]);
-    console.log(targetString);
+    const abc = [...localData[0]];
+    const xyz = [...localData[1]];
+
+    // console.log(abc);
+    const targetString = [...abc];
+    const targetString1 = [...xyz];
+    targetString.sort((a, b) => b[sorting] - a[sorting]);
+    targetString1.sort((a, b) => b[sorting] - a[sorting]);
+    setLocalData([targetString, targetString1]);
+    // console.log(targetString, targetString1);
   }
 
   const [isOpen, setIsOpen] = useState(false);

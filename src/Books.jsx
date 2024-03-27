@@ -3,7 +3,7 @@ import { CiStar } from "react-icons/ci";
 import { Link } from "react-router-dom";
 
 const Books = ({ bookData }) => {
-  console.log(bookData);
+  // console.log(bookData);
   return (
     <Link
       to={`/fullbookData/${bookData.bookId}`}

@@ -17,7 +17,6 @@ const BookCard = ({ cardData }) => {
     publisher,
     yearOfPublishing,
   } = cardData;
-  console.log(image);
   return (
     <div className="my-10 flex flex-col lg:flex-row gap-6 md:gap-10 border-2 rounded-xl p-6 items-center justify-start">
       <div>
@@ -61,7 +60,7 @@ const BookCard = ({ cardData }) => {
           <span className="text-amber-600 text-xs bg-amber-50 px-6 py-2 rounded-full my-6">
             Rating: {rating}
           </span>
-          <Link to={`/listedbooks/${bookId}`}>
+          <Link to={`/fullbookData/${bookId}`}>
             <button className="text-white font-bold bg-green-500 px-8 py-3 rounded-full my-3">
               View Detail
             </button>

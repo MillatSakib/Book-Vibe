@@ -18,9 +18,11 @@ const TriangleBar = (props) => {
 
 export default function App() {
   let state = 1;
-  const [data, setData] = useState(
-    JSON.parse(localStorage.getItem("readBook"))
-  );
+  // const [data, setData] = useState(
+  //   JSON.parse(localStorage.getItem("readBook"))
+  // );
+
+  const data = JSON.parse(localStorage.getItem("readBook"));
 
   if (String(localStorage.getItem("readBook")) === "null") {
     state = 0;

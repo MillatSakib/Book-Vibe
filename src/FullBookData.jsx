@@ -5,6 +5,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 const FullBookData = () => {
   const bookFullData = useLoaderData();
+
   const handelReadBook = () => {
     const alreadyRead = () => toast.error("You have already read this book");
     const read = () => toast("Added in read list");
@@ -24,7 +25,7 @@ const FullBookData = () => {
       );
       //
       if (avialablityReadBook) {
-        console.log("Book Has Local Storage");
+        // console.log("Book Has Local Storage");
         alreadyRead();
       } else {
         let temp = JSON.parse(localStorage.getItem("readBook"));
@@ -34,7 +35,7 @@ const FullBookData = () => {
       }
     }
   };
-  const handelWishList = (wishListData) => {
+  const handelWishList = () => {
     const alreadyWishList = () =>
       toast.error("You have already added this book on wishlist");
     const readedBook = () => toast.error("Readed book can't add on wishlist");
@@ -42,7 +43,38 @@ const FullBookData = () => {
     const setLocalData = bookFullData;
 
     let avialablityReadBook = String(localStorage.getItem("readBook"));
-    const stringData1 = JSON.stringify(setLocalData);
+
+    if (String(JSON.parse(localStorage.getItem("readBook"))) === "null") {
+      //starts here
+
+      let avialablityWishList = String(localStorage.getItem("wishList"));
+      const stringData = JSON.stringify(setLocalData);
+      if (avialablityWishList === "null") {
+        localStorage.setItem("wishList", stringData);
+        wishList();
+      } else {
+        // readDataFromLocal = JSON.parse(readData);
+        // console.log(readData[0].bookId);
+        avialablityWishList = JSON.parse(localStorage.getItem("wishList")).find(
+          (localData) => localData.bookId === setLocalData[0].bookId
+        );
+        //
+        if (avialablityWishList) {
+          // console.log("Book Has Local Storage");
+          alreadyWishList();
+        } else {
+          let temp = JSON.parse(localStorage.getItem("wishList"));
+          temp.push(setLocalData[0]);
+          localStorage.setItem("wishList", JSON.stringify(temp));
+
+          wishList();
+        }
+      }
+
+      //ends here
+
+      return;
+    }
     avialablityReadBook = JSON.parse(localStorage.getItem("readBook")).find(
       (localData) => localData.bookId === setLocalData[0].bookId
     );
@@ -148,13 +180,13 @@ const FullBookData = () => {
           <div className="flex gap-4 mt-6 md:mt-6">
             <button
               className="btn btn-outline px-8"
-              onClick={() => handelReadBook(bookFullData)}
+              onClick={() => handelReadBook()}
             >
               Read
             </button>
             <button
               className="btn btn-info text-white px-8"
-              onClick={() => handelWishList(bookFullData)}
+              onClick={() => handelWishList()}
             >
               Wishlist
             </button>

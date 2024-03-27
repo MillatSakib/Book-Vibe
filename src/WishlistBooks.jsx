@@ -2,15 +2,15 @@ import React from "react";
 import BookCard from "./BookCard";
 import NoDataFound from "./NoDataFound";
 
-const WishlistBooks = () => {
+const WishlistBooks = ({ data }) => {
   let stateOfLocalStorage = true;
   let localReadData;
-  if (String(localStorage.getItem("wishList")) === "null") {
+  if (String(data) === "null") {
     stateOfLocalStorage = false;
   }
 
   if (stateOfLocalStorage) {
-    localReadData = JSON.parse(localStorage.getItem("wishList"));
+    localReadData = data;
   }
 
   return (
