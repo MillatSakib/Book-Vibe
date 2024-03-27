@@ -2,15 +2,28 @@ import React, { useState } from "react";
 
 function Dropdown({ setLocalData, localData }) {
   function sort(sorting) {
-    const abc = [...localData[0]];
-    const xyz = [...localData[1]];
+    let targetString, targetString1;
+    if (String(localData[0]) !== "null") {
+      const abc = [...localData[0]];
+      targetString = [...abc];
+      targetString.sort((a, b) => b[sorting] - a[sorting]);
+    } else {
+      targetString = [];
+    }
 
-    // console.log(abc);
-    const targetString = [...abc];
-    const targetString1 = [...xyz];
-    targetString.sort((a, b) => b[sorting] - a[sorting]);
-    targetString1.sort((a, b) => b[sorting] - a[sorting]);
+    if (String(localData[1]) !== "null") {
+      const xyz = [...localData[1]];
+      targetString1 = [...xyz];
+      targetString1.sort((a, b) => b[sorting] - a[sorting]);
+    } else {
+      targetString1 = [];
+    }
+
+    // console.log(targetString, targetString1);
+
     setLocalData([targetString, targetString1]);
+    // console.log(abc);
+
     // console.log(targetString, targetString1);
   }
 

@@ -14,6 +14,8 @@ import PagesToRead from "./PagesToRead.jsx";
 import NotFoundPage from "./NotFound.jsx";
 import Readbooks from "./Readbooks.jsx";
 import WishlistBooks from "./WishlistBooks.jsx";
+import Upcoming from "./Upcoming.jsx";
+import Feedback from "./Feedback.jsx";
 
 const router = createBrowserRouter([
   {
@@ -68,6 +70,14 @@ const router = createBrowserRouter([
       {
         path: "/pagestoread",
         element: <PagesToRead></PagesToRead>,
+      },
+      {
+        path: "/upcoming",
+        element: <Upcoming></Upcoming>,
+      },
+      {
+        path: "/feedback",
+        element: <Feedback></Feedback>,
       },
     ],
   },

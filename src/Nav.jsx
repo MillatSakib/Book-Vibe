@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 
 const Nav = () => {
@@ -60,6 +59,26 @@ const Nav = () => {
                   Pages To Read
                 </NavLink>
               </li>
+              <li>
+                <NavLink
+                  to="/upcoming"
+                  className={({ isActive }) =>
+                    isActive ? activeButton : inActiveButton
+                  }
+                >
+                  Upcoming
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/feedback"
+                  className={({ isActive }) =>
+                    isActive ? activeButton : inActiveButton
+                  }
+                >
+                  Feedback
+                </NavLink>
+              </li>
             </ul>
           </div>
           <a className="btn btn-ghost text-2xl text-green-500 font-extrabold ml-1 md:ml-6">
@@ -96,6 +115,26 @@ const Nav = () => {
                 }
               >
                 Pages To Read
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/upcoming"
+                className={({ isActive }) =>
+                  isActive ? activeButton : inActiveButton
+                }
+              >
+                Upcoming
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/feedback"
+                className={({ isActive }) =>
+                  isActive ? activeButton : inActiveButton
+                }
+              >
+                Feedback
               </NavLink>
             </li>
           </ul>
