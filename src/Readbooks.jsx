@@ -20,7 +20,7 @@ const Readbooks = () => {
           <BookCard cardData={cardData} key={14568 + index}></BookCard>
         ))
       ) : (
-        <NoDataFound></NoDataFound>
+        <NoDataFound data="read"></NoDataFound>
       )}
     </div>
   );

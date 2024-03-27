@@ -1,9 +1,22 @@
 import React, { useState } from "react";
 
 function Dropdown() {
+  function sort(sorting) {
+    const targetString = JSON.parse(localStorage.getItem("readBook"));
+    targetString.sort((a, b) => a[sorting] - b[sorting]);
+    console.log(targetString);
+  }
+
   const [isOpen, setIsOpen] = useState(false);
   const sortCards = (sortParameter) => {
     setIsOpen(false);
+    if (sortParameter === "rateing") {
+      sort("rating");
+    } else if (sortParameter === "pageNumber") {
+      sort("totalPages");
+    } else if (sortParameter === "publishYear") {
+      sort("yearOfPublishing");
+    }
   };
   const toggleDropdown = () => {
     setIsOpen(!isOpen);

@@ -20,7 +20,7 @@ const WishlistBooks = () => {
           <BookCard cardData={cardData} key={9142 + index}></BookCard>
         ))
       ) : (
-        <NoDataFound></NoDataFound>
+        <NoDataFound data="add wishlist"></NoDataFound>
       )}
     </div>
   );

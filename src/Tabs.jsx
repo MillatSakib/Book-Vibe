@@ -7,9 +7,7 @@ const Tabs = ({ stateId }) => {
     "flex items-center flex-shrink-0 px-5 py-3 space-x-2 border-b border-gray-400 text-gray-400";
   const inActiveStyle =
     "flex items-center flex-shrink-0 px-5 py-3 space-x-2 border border-b-0 rounded-t-lg border-gray-400";
-  const handelTab = () => {
-    console.log("Hello");
-  };
+
   return (
     <div className="flex items-center -mx-4 overflow-x-auto overflow-y-hidden flex-nowrap my-4">
       <Link
