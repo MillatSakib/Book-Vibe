@@ -128,13 +128,13 @@ const FullBookData = () => {
       <div className="w-[30%]">
         <img src={image} className="max-h-[80vh] text-center mx-auto " />
       </div>
-      <div className="text-center w-[60%] md:text-left md:ml-6">
+      <div className="text-center w-[90%] md:w-[65%] md:text-left md:ml-6">
         <div className="my-10">
           <div className="text-2xl font-semibold">{bookName}</div>
           <div className="text-[1rem]">By: {author}</div>
-          <hr />
-          <div className="text-[1rem]">{category[1]}</div>
-          <hr />
+          <hr className="m-1" />
+          <div className="text-[1rem] my-2">{category[1]}</div>
+          <hr className="m-1" />
           <div className="text-[1rem]">
             <span className="font-bold">Review: </span>
             {review}

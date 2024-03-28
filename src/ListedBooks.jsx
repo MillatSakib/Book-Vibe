@@ -25,7 +25,7 @@ const ListedBooks = () => {
           localData={localData}
         ></DropdownMenu>
       </div>
-      <div className="w-[90%] mx-auto">
+      <div className="w-[90%] mx-auto my-8">
         <Tabs>
           <TabList className="flex">
             <Tab

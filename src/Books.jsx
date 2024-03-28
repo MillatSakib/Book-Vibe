@@ -18,7 +18,7 @@ const Books = ({ bookData }) => {
         {bookData.tags.map((tag, index) => (
           <span
             key={index + 510}
-            className="text-green-400 bg-gray-200 mx-2 rounded-full px-4 py-1"
+            className="text-green-400 bg-gray-200 mx-2 rounded-full px-4 py-1 inline-block my-1"
           >
             #{tag}{" "}
           </span>

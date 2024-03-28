@@ -12,7 +12,7 @@ const Home = () => {
       <h3 className="text-2xl md:text-4xl text-center font-semibold my-6 md:my-10">
         Books
       </h3>
-      <div className="grid justify-center grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 mx-6 md:mx-10">
+      <div className="grid justify-center grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 mx-6 md:mx-10 mb-16">
         {booksData.map((bookData) => (
           <Books key={bookData.bookId} bookData={bookData}></Books>
         ))}
