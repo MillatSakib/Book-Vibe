@@ -30,13 +30,13 @@ const Books = ({ bookData }) => {
           {bookData.bookName}
         </h3>
         <span className="text-[1rem] font-semibold">By: {bookData.author}</span>
-        <p className="flex justify-between pt-6">
+        <div className="flex justify-between pt-6">
           <div>{bookData.category[1]}</div>
           <div className="flex gap-1 items-center">
             <CiStar />
             {bookData.rating}
           </div>
-        </p>
+        </div>
       </div>
     </Link>
   );

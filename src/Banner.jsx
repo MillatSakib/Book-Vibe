@@ -9,13 +9,7 @@ const Banner = () => {
           Books to freshen up your bookshelf
         </div>
         <div>
-          <Link
-            to="/listedbooks"
-            className="btn btn-success text-white"
-            View
-            The
-            List
-          >
+          <Link to="/listedbooks" className="btn btn-success text-white">
             View The List
           </Link>
         </div>
